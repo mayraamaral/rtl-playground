@@ -11,6 +11,7 @@ export const UserForm = ({ onAddUser }: IOnAddUser) => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
+    console.log("oi");
 
     if (onAddUser) onAddUser({ nome, email });
   };
@@ -29,7 +30,7 @@ export const UserForm = ({ onAddUser }: IOnAddUser) => {
         placeholder="email@email.com"
         onChange={(e) => setEmail(e.target.value)}
       />
-      <input type="submit" value="Cadastrar" />
+      <button>Cadastrar</button>
     </form>
   );
 };
