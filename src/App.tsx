@@ -9,6 +9,7 @@ function App() {
 
   const onAddUser = (user: User) => {
     setUserList([...userList, user]);
+    console.log("oi");
   };
 
   return (

@@ -2,11 +2,10 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { UserForm } from "./UserForm";
-import { User } from "../utils/interfaces";
 
 describe("testes do UserForm", () => {
   test("renderiza dois inputs e um botão", () => {
-    render(<UserForm />);
+    render(<UserForm onAddUser={() => {}} />);
     const nomeInput = screen.getByTestId("nome");
     const emailInput = screen.getByTestId("email");
     const submitButton = screen.getByRole("button");

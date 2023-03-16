@@ -11,7 +11,6 @@ export const UserForm = ({ onAddUser }: IOnAddUser) => {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
-    console.log("oi");
 
     if (onAddUser) onAddUser({ nome, email });
   };
