@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import { UserForm } from "./UserForm";
@@ -15,7 +14,7 @@ describe("testes do UserForm", () => {
     expect(submitButton).toBeInTheDocument();
   });
 
-  test("ao preencher o formulario chama a função onAddUser", () => {
+  test("ao preencher o formulario chama a função onAddUser", async () => {
     // const argList: User[] = [];
 
     // const callback = (args: User) => {
@@ -32,13 +31,13 @@ describe("testes do UserForm", () => {
     const emailInput = screen.getByTestId("email");
     const submitButton = screen.getByRole("button");
 
-    user.click(nomeInput);
-    user.keyboard("vem ser");
+    await user.click(nomeInput);
+    await user.keyboard("vem ser");
 
-    user.click(emailInput);
-    user.keyboard("vemser@vemser.com");
+    await user.click(emailInput);
+    await user.keyboard("vemser@vemser.com");
 
-    user.click(submitButton);
+    await user.click(submitButton);
 
     // expect(argList).toHaveLength(1);
     // expect(argList[0]).toEqual({
